@@ -19,5 +19,18 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.delete('/:id', (req, res, next) => {
+		const id = req.params.id
+    knex('book')
+    	.where('id', id)
+			.del()
+    	.returning('*')
+    	.then(book => {
+        if(!book.length){
+          next()
+        } res.json({ book: book[0] });
+    });
+});
+
 
 module.exports = router
