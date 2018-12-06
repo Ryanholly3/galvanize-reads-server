@@ -7,6 +7,7 @@ function getBooks(){
     .select(
       'book.id as book_id',
        'book.title',
+       'book.genre',
        'book.description',
        'book.cover_url',
      )
