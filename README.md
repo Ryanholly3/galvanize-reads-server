@@ -4,11 +4,20 @@
 
 View repository for front-end [HERE](https://github.com/Ryanholly3/galvanize-reads-client).
 
+## Required Installation(s)
+
+PostgreSQL using HomeBrew:
+```sh
+brew install postgresql
+```
+
+Start a PostgreSQL server as a Brew service:
+```sh
+brew services start postgresql
+```
+
 
 ## Run the Project
-Required Installation:
-psql
-
 On command line:
 
 ```sh
