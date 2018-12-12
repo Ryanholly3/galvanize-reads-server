@@ -1,16 +1,8 @@
-# Galvanize Reads
+# Galvanize Reads Server
 
 [Open Heroku Deployed Database](https://shrouded-retreat-53312.herokuapp.com)
 
 View repository for front-end [HERE](https://github.com/Ryanholly3/galvanize-reads-client).
-
-## Description
-
-
-
-## Routes
-http://localhost:3001/authors
-http://localhost:3001/books
 
 
 ## Run the Project
@@ -30,6 +22,11 @@ npm start
 ```
 
 Then visit http://localhost:3001/
+
+## Routes
+* http://localhost:3001/authors
+* http://localhost:3001/books
+
 
 ## Technologies Used
 * Node.js
