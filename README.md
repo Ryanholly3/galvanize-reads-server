@@ -21,7 +21,7 @@ brew services start postgresql
 On command line:
 
 ```sh
-git clone https://github.com/Ryanholly3/galvanize-reads-server.git
+git clone git@github.com:Ryanholly3/galvanize-reads-server.git
 cd galvanize-reads-server
 npm install
 createdb galvreadsdb
