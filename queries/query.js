@@ -46,5 +46,31 @@ function authorBookJoin(book){
     .whereIn('author_book.book_id', [book.book_id])
 }
 
+function postAuthors(body){
+  return knex('author')
+    .insert(body)
+    .returning('*')
+}
+
+function postBooks(body){
+  return knex('book')
+    .insert(body)
+    .returning('*')
+}
+
+function deleteAuthor(id){
+  return knex('book')
+    .where('id', id)
+    .del()
+    .returning('*')
+}
+
+function deleteBook(id){
+  return knex('book')
+    .where('id', id)
+    .del()
+    .returning('*')
+}
+
 
 module.exports = {getAuthors, getBooks, bookAuthorJoin, authorBookJoin}

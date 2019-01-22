@@ -20,9 +20,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res, next) => {
     const body = req.body;
-    knex('author')
-      .insert(body)
-      .returning('*')
+    return query.postAuthors(body)
       .then(author => {
         res.json({ author: author[0] });
     });
@@ -30,10 +28,7 @@ router.post('/', (req, res, next) => {
 
 router.delete('/:id', (req, res, next) => {
 		const id = req.params.id
-    knex('author')
-    	.where('id', id)
-			.del()
-    	.returning('*')
+    return query.deleteAuthor(id)
     	.then(author => {
         if(!author.length){
           next()

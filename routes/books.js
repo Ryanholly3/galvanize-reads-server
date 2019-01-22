@@ -21,20 +21,15 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res, next) => {
     const body = req.body;
-    knex('book')
-      .insert(body)
-      .returning('*')
+    return query.postBooks(body)
       .then(book => {
         res.json({ book: book[0] });
-    });
+      });
 });
 
 router.delete('/:id', (req, res, next) => {
 		const id = req.params.id
-    knex('book')
-    	.where('id', id)
-			.del()
-    	.returning('*')
+    return query.deleteBook(id)
     	.then(book => {
         if(!book.length){
           next()
