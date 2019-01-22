@@ -59,7 +59,7 @@ function postBooks(body){
 }
 
 function deleteAuthor(id){
-  return knex('book')
+  return knex('author')
     .where('id', id)
     .del()
     .returning('*')
@@ -73,4 +73,4 @@ function deleteBook(id){
 }
 
 
-module.exports = {getAuthors, getBooks, bookAuthorJoin, authorBookJoin}
+module.exports = {getAuthors, getBooks, bookAuthorJoin, authorBookJoin, postAuthors, postBooks, deleteAuthor, deleteBook }
